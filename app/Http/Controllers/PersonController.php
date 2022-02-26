@@ -2,81 +2,97 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePersonRequest;
 use App\Models\Person;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 
 class PersonController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $fathers = Person::all(['id', 'name']);
+        return view('person.create', ['fathers' => $fathers]);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param StorePersonRequest $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StorePersonRequest $request)
     {
-        //
+        if (
+            $request['father_id'] &&
+            $request['father_id'] === '-- select father --'
+        ) {
+            $father = null;
+        } else {
+            $father = $request['father_id'];
+        }
+
+        $person = Person::query()->create([
+            'name' => $request['name'],
+            'father_id' => $father,
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            'city' => $request['city'],
+            'country' => $request['country'],
+            'caste' => $request['caste'],
+            'bio' => $request['bio']
+        ]);
+        return redirect(route('person.show', $person->id))->with(
+            'toast_success',
+            'Person created successfully'
+        );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Person  $person
-     * @return \Illuminate\Http\Response
-     */
     public function show(Person $person)
     {
-        //
+        return view('person.show', compact('person'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Person  $person
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Person $person)
     {
-        //
+        $fathers = Person::all(['id', 'name']);
+        return view('person.edit', [
+            'person' => $person,
+            'fathers' => $fathers
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Person  $person
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Person $person)
+    public function update(StorePersonRequest $request, Person $person)
     {
-        //
+        if (
+            $request['father_id'] &&
+            $request['father_id'] === '-- select father --'
+        ) {
+            $father = null;
+        } else {
+            $father = $request['father_id'];
+        }
+
+        $person->update([
+            'name' => $request['name'],
+            'father_id' => $father,
+            'phone' => $request['phone'] ?? null,
+            'address' => $request['address'],
+            'city' => $request['city'],
+            'country' => $request['country'],
+            'caste' => $request['caste'],
+            'bio' => $request['bio'] ?? null
+        ]);
+
+        return redirect(route('person.show', $person->id))->with(
+            'toast_success',
+            'Person updated successfully'
+        );
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Person  $person
-     * @return \Illuminate\Http\Response
+     * @param Person $person
+     * @return Response
      */
     public function destroy(Person $person)
     {

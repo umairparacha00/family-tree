@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', static function () {
     return view('welcome');
 });
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('people');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+    Route::resource('person', PersonController::class);
+});

@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Person>
+ * @extends Factory
  */
 class PersonFactory extends Factory
 {
@@ -17,7 +17,13 @@ class PersonFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(true),
+            'phone' => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
+            'city' => $this->faker->city(),
+            'country' => $this->faker->country(),
+            'bio' => $this->faker->paragraph,
+            'caste' => 'Awan'
         ];
     }
 }

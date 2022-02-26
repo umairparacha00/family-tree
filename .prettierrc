@@ -1,4 +1,4 @@
 {
     "singleQuote": true,
-    "trailingCommaPHP": true
+    "trailingCommaPHP": false
 }
