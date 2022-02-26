@@ -67,6 +67,11 @@ class PersonController extends Controller
             $request['father_id'] === '-- select father --'
         ) {
             $father = null;
+        } elseif (
+            $request['father_id'] &&
+            $request['father_id'] === $person->id
+        ) {
+            $father = null;
         } else {
             $father = $request['father_id'];
         }
