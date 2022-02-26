@@ -69,9 +69,13 @@ class PersonController extends Controller
             $father = null;
         } elseif (
             $request['father_id'] &&
-            $request['father_id'] === $person->id
+            $request['father_id'] == $person->id
         ) {
-            $father = null;
+            if ($person->father_id !== null) {
+                $father = $person->father_id;
+            } else {
+                $father = null;
+            }
         } else {
             $father = $request['father_id'];
         }
