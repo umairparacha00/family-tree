@@ -32,12 +32,12 @@
 <section class='mt-16 mx-auto w-4/5'>
     <div>
         <div class="flex flex-col text-center w-full mb-6" style="user-select: auto;">
-            <h2 class="text-6xl text-indigo-500 tracking-widest font-bold mb-1 uppercase">
+            <h2 class="text-3xl md:text-6xl text-indigo-500 tracking-widest font-bold mb-1 uppercase">
                 Shajra nasheen
             </h2>
-            <h1 class="text-3xl font-extrabold text-center text-gray-900 uppercase">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-center text-gray-900 uppercase">
                 Aqib Mukhtar</h1>
-            <h2 class="text-2xl text-indigo-500 tracking-widest font-bold mb-1" style="user-select: auto;">
+            <h2 class="text-3xl md:text-4xl text-indigo-500 tracking-widest font-bold mb-1" style="user-select: auto;">
                 03349584112
             </h2>
         </div>
