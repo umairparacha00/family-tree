@@ -32,25 +32,17 @@
 <section class='mt-16 mx-auto w-4/5'>
     <div>
         <div class="flex flex-col text-center w-full mb-6" style="user-select: auto;">
-            <h2 class="text-sm text-indigo-500 tracking-widest font-bold title-font mb-1" style="user-select: auto;">
+            <h2 class="text-6xl text-indigo-500 tracking-widest font-bold mb-1 uppercase">
                 Shajra nasheen
             </h2>
-            <h1 class="text-3xl font-extrabold text-center title-font text-gray-900" style="user-select: auto;">
-                Aqib Mukhtar Awan</h1>
-            <h2 class="text-lg text-indigo-500 tracking-widest font-bold title-font mb-1" style="user-select: auto;">
+            <h1 class="text-3xl font-extrabold text-center text-gray-900 uppercase">
+                Aqib Mukhtar</h1>
+            <h2 class="text-2xl text-indigo-500 tracking-widest font-bold mb-1" style="user-select: auto;">
                 03349584112
             </h2>
         </div>
 
         <div class='grid sm:grid-cols-2 gap-4'>
-            <div>
-                <img src='{{ asset('assets/images/pics/1.jpeg') }}'
-                     class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
-            </div>
-            <div>
-                <img src='{{ asset('assets/images/pics/5.jpeg') }}'
-                     class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
-            </div>
             <div>
                 <img src='{{ asset('assets/images/pics/2.jpeg') }}'
                      class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
@@ -60,7 +52,11 @@
                      class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
             </div>
             <div>
-                <img src='{{ asset('assets/images/pics/4.jpeg') }}'
+                <img src='{{ asset('assets/images/pics/1.jpeg') }}'
+                     class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
+            </div>
+            <div>
+                <img src='{{ asset('assets/images/pics/5.jpeg') }}'
                      class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
             </div>
             <div>
