@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="border-t border-gray-200">
-                    <div class='px-4 py-5 sm:px-6'>
+                    <div class='px-4 py-5 sm:px-6 overflow-x-scroll'>
                         @include('person.tree', ['person' => $person])
                     </div>
                 </div>
