@@ -9,16 +9,22 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- This example requires Tailwind CSS v2.0+ -->
             <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-                <div class='flex items-center justify-between px-4 py-5 sm:px-6'>
+                <div
+                    class='flex flex-col sm:items-center sm:justify-between sm:flex-row px-4 py-5 sm:px-6 space-y-4 sm:space-y-0'>
                     <div>
                         <h3 class="text-lg leading-6 font-bold text-gray-900">Details</h3>
                         <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details about person.</p>
                     </div>
-                    <div>
+                    <div class='flex justify-between items-center space-x-4'>
                         <a href='{{ route('person.edit', $person->id) }}' class='inline-flex items-center px-4 py-2 bg-gray-800
                            border border-transparent rounded-md font-semibold text-xs text-white uppercase
                            tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900
-                           focus:ring focus:ring-gray-300 disabled:opacity-25 transition'>Edit Details</a>
+                           focus:ring focus:ring-gray-300 disabled:opacity-25 transition'>Edit</a>
+                        <a
+                            href='{{ route('person.create', ['father' => $person->id]) }}' class='inline-flex items-center px-4 py-2 bg-gray-800
+                           border border-transparent rounded-md font-semibold text-xs text-white uppercase
+                           tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900
+                           focus:ring focus:ring-gray-300 disabled:opacity-25 transition'>Add Child</a>
                     </div>
                 </div>
                 <div class="border-t border-gray-200">

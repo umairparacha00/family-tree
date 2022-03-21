@@ -31,7 +31,7 @@
                                                     <option>-- select father --</option>
                                                     @foreach($fathers as $father)
                                                         <option
-                                                            value="{{ $father->id }}">{{ $father->id. ' | ' . $father->name }}</option>
+                                                            value="{{ $father->id }}" @selected($father->id == request('father'))>{{ $father->id. ' | ' . $father->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
