@@ -44,6 +44,10 @@
 
         <div class='grid sm:grid-cols-2 gap-4'>
             <div>
+                <img src='{{ asset('assets/images/pics/papa.jpeg') }}'
+                     class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
+            </div>
+            <div>
                 <img src='{{ asset('assets/images/pics/2.jpeg') }}'
                      class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
             </div>
@@ -53,10 +57,6 @@
             </div>
             <div>
                 <img src='{{ asset('assets/images/pics/1.jpeg') }}'
-                     class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
-            </div>
-            <div>
-                <img src='{{ asset('assets/images/pics/5.jpeg') }}'
                      class='w-full h-[300px] lg:h-[400px] rounded-lg shadow-xl object-cover'>
             </div>
             <div>
